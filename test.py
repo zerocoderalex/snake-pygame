@@ -1,13 +1,11 @@
-import unittest
-from main import reminder
+import pytest
+from main import count_vowels
 
-class TestCheck(unittest.TestCase):
-    def test_reminder(self):
-        self.assertEqual(reminder(5, 2), 1)
-        self.assertEqual(reminder(20, 4), 0)
+def test_count_vowels():
+    assert count_vowels("alex") == 2
+    assert count_vowels("mkrt") == 0
+    assert count_vowels("alex24") == 2
 
-    def test_divide_by_zero(self):
-        self.assertRaises(ValueError, reminder, 6, 0)
-
-if __name__ == '__main__':
-    unittest.main()
+# Проверьте, что функция правильно считает гласные в строке, содержащей только гласные.
+# Проверьте, что функция возвращает 0 для строки, не содержащей гласных.
+# Проверьте, что функция правильно считает гласные в смешанных строках (включая прописные и строчные буквы).
