@@ -1,20 +1,20 @@
-import requests
+# Получение строки
+# Предобработка строки (удаление пробелов, символов, регистра)
+# Определение длины строки
+# Сравнение первого символа с последним, второго с предпоследним и т.д.
+# Вывод результата
 
-def get_cat_image():
-    url = "https://api.thecatapi.com/v1/images/search"
-    response = requests.get(url)
 
-    if response.status_code == 200:
-        data = response.json()
-        # Извлекаем URL изображения
-        cat_image_url = data[0]['url']
-        return cat_image_url
-    else:
-        print(f"Ошибка при получении изображения: {response.status_code}")
-        return None
+def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
 
-# Пример использования
-if __name__ == "__main__":
-    cat_image = get_cat_image()
-    if cat_image:
-        print(f"Случайное изображение кошки: {cat_image}")
+    length = len(s)
+
+    for i in range(length // 2):
+        if s[i] != s[length - 1 - i]:
+          return False
+    return True
+
+
+print(is_palindrome("ABBA"))
+print(is_palindrome("Boney M"))
