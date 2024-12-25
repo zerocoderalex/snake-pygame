@@ -8,7 +8,6 @@ class Graph:
        self.graph[u].append(v)
 
    def print_graph(self):
-       # {0: [1, 4], 1: [2, 3, 4], 2: [3], 3: [4]}
        for node in self.graph:
            print(node, "->", " -> ".join(map(str, self.graph[node])))
 
@@ -18,7 +17,8 @@ g.add_edge(0, 1)
 g.add_edge(0, 4)
 g.add_edge(1, 2)
 g.add_edge(1, 3)
-g.add_edge(1, 4)
+g.add_edge(2, 5)
 g.add_edge(2, 3)
 g.add_edge(3, 4)
+g.add_edge(3, 5)
 g.print_graph()
